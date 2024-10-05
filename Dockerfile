@@ -21,10 +21,4 @@ RUN mkdir \
         var \
         uploads
 
-# Docker-Entrypoint
-COPY docker-entrypoint.sh /
-COPY docker-entrypoint.d /docker-entrypoint.d
-
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["httpd-foreground"]
 EXPOSE 80
