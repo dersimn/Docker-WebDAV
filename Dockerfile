@@ -1,4 +1,3 @@
-#FROM httpd:alpine
 FROM httpd
 
 # Apache config
