@@ -15,10 +15,15 @@ RUN sed -i \
     /usr/local/apache2/conf/httpd.conf
 
 RUN mkdir \
-        var \
-        uploads && \
-    chown www-data:www-data \
-        var \
-        uploads
+        /logs \
+        /webdav \
+    && touch \
+        /webdav.lock \
+    && chown www-data:www-data \
+        /logs \
+        /webdav \
+        /webdav.lock
+
+COPY webdav.conf /usr/local/apache2/conf/extra/httpd-dav.conf
 
 EXPOSE 80

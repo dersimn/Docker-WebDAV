@@ -2,7 +2,7 @@
 ```
 docker build -t test .
 docker run -d --name webdavtest -p 8085:80 test
-docker exec -it webdavtest htdigest -c "/usr/local/apache2/user.passwd" DAV-upload admin
+docker exec -it webdavtest htdigest -c /webdav.password webdav_user myusername
 docker restart webdavtest
 docker rm -f webdavtest
 ```
